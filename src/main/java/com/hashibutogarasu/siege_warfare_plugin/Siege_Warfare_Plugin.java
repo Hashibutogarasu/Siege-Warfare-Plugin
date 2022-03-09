@@ -33,6 +33,4 @@ public final class Siege_Warfare_Plugin extends JavaPlugin {
         // Plugin shutdown logic
         getLogger().info("攻城戦プラグインを停止しました");
     }
-
-
 }

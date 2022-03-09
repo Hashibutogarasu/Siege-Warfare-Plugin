@@ -3,7 +3,7 @@ version: '${version}'
 main: com.hashibutogarasu.siege_warfare_plugin.Siege_Warfare_Plugin
 api-version: 1.18
 
-commands: #自作プラグインのコマンドを宣言
+commands:
   setteam:
     description: this is 1st sample command.
     usage: /<command>
