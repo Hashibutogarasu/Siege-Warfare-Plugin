@@ -1,3 +1,5 @@
+import static sun.security.util.Debug.println
+
 plugins {
     id 'java'
 }
@@ -5,11 +7,13 @@ plugins {
 group = 'com.Hashibutogarasu'
 version = '1.0'
 
-task copyDependencies(type:Copy) {
+task Copyjarfile(type:Copy) {
+    delete("Paper-1.18.1-test\\plugins\\Siege_Warfare_Plugin-${version}.jar")
     copy {
-        from file("build\\libs\\Siege_Warfare_Plugin-1.0.jar")
-        into 'Paper-1.18.1-test\\plugins'
+        from fileTree("build\\libs\\Siege_Warfare_Plugin-${version}.jar")
+        into ("Paper-1.18.1-test\\plugins")
     }
+    duplicatesStrategy 'exclude'
 }
 
 repositories {
