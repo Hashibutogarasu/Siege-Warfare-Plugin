@@ -6,7 +6,7 @@ api-version: 1.18
 commands:
   setteam:
     description: モードを指定してチームをセットします random：ランダム指定 custom：カスタム指定
-    usage: /<command> [mode]
+    usage: /<command> mode
   startsiegewarfare:
     description: セットしたチームで攻城戦を開始します
     usage: /<command>
