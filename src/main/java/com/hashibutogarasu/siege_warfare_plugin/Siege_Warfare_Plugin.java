@@ -2,6 +2,7 @@ package com.hashibutogarasu.siege_warfare_plugin;
 
 import com.hashibutogarasu.siege_warfare_plugin.Command.setteam;
 import com.hashibutogarasu.siege_warfare_plugin.Command.startsiegewarfare;
+import com.hashibutogarasu.siege_warfare_plugin.Command.teamnext;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -20,6 +21,9 @@ public final class Siege_Warfare_Plugin extends JavaPlugin {
         }
         if(cmd.getName().equalsIgnoreCase("startsiegewarfare")){
             return startsiegewarfare.run(sender,cmd,commandLabel,args);
+        }
+        if(cmd.getName().equalsIgnoreCase("teamnext")){
+            return teamnext.run(sender,cmd,commandLabel,args);
         }
 
         return false;

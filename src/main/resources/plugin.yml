@@ -10,3 +10,6 @@ commands:
   startsiegewarfare:
     description: セットしたチームで攻城戦を開始します
     usage: /<command>
+  teamnext:
+    description: 次に進みます
+    usage: /<command> playername teamname
