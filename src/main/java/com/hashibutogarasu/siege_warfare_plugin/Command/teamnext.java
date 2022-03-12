@@ -7,6 +7,7 @@ import org.bukkit.entity.Player;
 import java.util.List;
 
 
+import static org.bukkit.Bukkit.getLogger;
 import static org.bukkit.Bukkit.getServer;
 
 public class teamnext {
@@ -32,6 +33,7 @@ public class teamnext {
 
     /**
      * Send next rawtext to sender
+     *
      * rawtextを送るやつクリックするとチームに入れる
      * 単純にループ文だと見にくくなるのでステップ形式にした
      * @return void
@@ -40,6 +42,9 @@ public class teamnext {
         try {
             if (sender.isOp() && players.size() != 0) {
 
+                /**
+                 * サーバー内のプレイヤーとプレイヤー名とプレイヤー数を取得
+                 */
                 players = getServer().getOnlinePlayers().stream().toList();
                 playername = players.get(count).getName();
                 maxcount = players.size();
@@ -91,9 +96,16 @@ public class teamnext {
             }
         }
         catch (ArrayIndexOutOfBoundsException e){
+            /**
+             * これは、予測済みのエラー  playername = players.get(count).getName(); で配列の外のやつを取得すると出るのでこれでゴリ押し
+             */
             return true;
         }
         catch (Exception e){
+            /**
+             * 一応例外処理
+             * ダメです！ エラーがでました！
+             */
             return false;
         }
     }
