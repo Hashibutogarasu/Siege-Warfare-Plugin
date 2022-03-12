@@ -4,7 +4,10 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class setteam {
 
@@ -12,8 +15,6 @@ public class setteam {
      * Players list in the server {@linkplain
      * teamnext#run(CommandSender, Command, String, String[])}
      */
-    @NotNull
-    public static Collection<? extends Player> players;
 
     /**
      * args[0]:Selection mode random:Random selection,custom:Custom selection
@@ -34,11 +35,12 @@ public class setteam {
             }
 
             if(mode.matches("custom")){
-                players = sender.getServer().getOnlinePlayers();
+                List<? extends Player> players = sender.getServer().getOnlinePlayers().stream().toList();
                 sender.sendMessage("カスタムでチームを設定します");
                 sender.sendMessage("プレイヤー数：" + players.size());
 
                 teamnext.count = 0;
+                teamnext.maxcount = players.size();
 
                 teamnext.run(sender, cmd, commandLabel, args);
 

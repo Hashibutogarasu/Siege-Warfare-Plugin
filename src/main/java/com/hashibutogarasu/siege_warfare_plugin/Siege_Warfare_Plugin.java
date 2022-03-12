@@ -11,7 +11,8 @@ public final class Siege_Warfare_Plugin extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
-        getLogger().info("攻城戦プラグインを開始しました");
+        getLogger().info("攻城戦プラグインを読み込んでいます");
+        getLogger().info("攻城戦プラグインを読み込みました");
     }
 
     @Override
